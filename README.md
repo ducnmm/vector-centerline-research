@@ -14,6 +14,28 @@ This repository contains two image-processing experiments around raster-to-vecto
 - `analysis/report.html`: side-by-side visual review page.
 - `analysis/metrics.md`: lightweight quantitative QA metrics.
 
+## Results
+
+Experiment A produced patched VTracer SVGs for all 6 line-art PNG samples:
+
+![Experiment A outputs](analysis/smooth_patched_contact.jpg)
+
+Experiment B produced centerline SVGs for all 7 filled-stroke samples. The output is a stroked centerline representation, not an outline trace:
+
+![Experiment B centerline outputs](analysis/centerline_output_contact.jpg)
+
+The provided reference render is visually close:
+
+![Experiment B reference](analysis/centerline_reference_contact.jpg)
+
+Quantitative QA for Experiment B:
+
+- Average IoU against the reference render: `0.738`
+- Average symmetric Chamfer distance: `0.73 px`
+- Output path count is intentionally moderate: straight graph edges are emitted as `L`, curved edges as cubic paths.
+
+For a side-by-side review, open `analysis/report.html`.
+
 ## Reproduce
 
 From this folder:
