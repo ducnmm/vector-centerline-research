@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+<g id="centerline-paths">
+  <path id="path-1" d="M401.49 465.49 C403.66 469.6 366.01 423.06 416.81 494.5 C467.61 565.94 711.66 902.74 760.06 969.75 C808.47 1036.76 758.72 967.82 758.5 967.5" stroke="#000000" stroke-width="45" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+  <path id="path-2" d="M290.52 497.16 C289.66 498.62 285.35 440.16 284.5 507.5 C283.65 574.84 284.5 906.62 284.5 972.5" stroke="#000000" stroke-width="45" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+  <path id="path-3" d="M284.5 492 L284.5 54.5" stroke="#000000" stroke-width="45" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+  <path id="path-4" d="M714.5 245.5 C672 272.74 458.84 406.65 414.5 437.81 C370.16 468.98 403.33 461.57 401.49 465.49" stroke="#000000" stroke-width="45" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+  <path id="path-5" d="M290.52 497.16 C297.6 495.46 331.29 488.21 340.5 485.19 C349.71 482.16 347.36 478.6 355.5 475.81 C363.64 473.02 391.97 466.96 397.99 465.5" stroke="#000000" stroke-width="45" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+  <path id="path-6" d="M287.01 497.01 L284.5 492" stroke="#000000" stroke-width="45" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+  <path id="path-7" d="M401.49 465.49 L397.99 465.5" stroke="#000000" stroke-width="45" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+  <path id="path-8" d="M401.49 465.49 L401.5 462.5" stroke="#000000" stroke-width="45" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+</g>
+</svg>

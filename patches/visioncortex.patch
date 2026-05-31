@@ -1,0 +1,62 @@
+diff --git a/src/path/paths.rs b/src/path/paths.rs
+index c98fb4f..cee492d 100644
+--- a/src/path/paths.rs
++++ b/src/path/paths.rs
+@@ -270,9 +270,9 @@ impl PathF64 {
+     ) -> PathF64 {
+         assert!(max_iterations > 0);
+         let mut corners = SubdivideSmooth::find_corners(self, corner_threshold);
+-        let mut path = PathF64::new();
++        let mut path = self.clone();
+         for _i in 0..max_iterations {
+-            let result = SubdivideSmooth::subdivide_keep_corners(self, &corners, outset_ratio, segment_length);
++            let result = SubdivideSmooth::subdivide_keep_corners(&path, &corners, outset_ratio, segment_length);
+             path = result.0;
+             corners = result.1;
+             if result.2 { // Can terminate early
+@@ -563,4 +563,4 @@ mod tests {
+             "M2,3 L4,3 L0,0 ".to_owned()
+         );
+     }
+-}
+\ No newline at end of file
++}
+diff --git a/src/path/smooth.rs b/src/path/smooth.rs
+index 3be090c..14831a7 100644
+--- a/src/path/smooth.rs
++++ b/src/path/smooth.rs
+@@ -227,9 +227,30 @@ impl SubdivideSmooth {
+         // They intersect
+         if dab.is_sign_positive() != abc.is_sign_positive() {
+             if let Some((intersection, _)) = find_intersection(a, b, c, d) {
+-                return [*a, intersection, intersection, *d];
++                return Self::clamp_bezier_handles([*a, intersection, intersection, *d]);
+             }
+         }
+-        [*a, *b, *c, *d]
++        Self::clamp_bezier_handles([*a, *b, *c, *d])
+     }
+-}
+\ No newline at end of file
++
++    fn clamp_bezier_handles(points: [PointF64; 4]) -> [PointF64; 4] {
++        let [a, mut b, mut c, d] = points;
++        let chord = norm(&(d - a));
++        if chord < f64::EPSILON {
++            return [a, b, c, d];
++        }
++        let max_handle = chord * 0.55;
++        b = Self::clamp_handle(a, b, max_handle);
++        c = Self::clamp_handle(d, c, max_handle);
++        [a, b, c, d]
++    }
++
++    fn clamp_handle(anchor: PointF64, handle: PointF64, max_length: f64) -> PointF64 {
++        let delta = handle - anchor;
++        let length = norm(&delta);
++        if length <= max_length || length < f64::EPSILON {
++            return handle;
++        }
++        anchor + delta.get_normalized() * max_length
++    }
++}

@@ -1,0 +1,265 @@
+{
+  "smooth": {
+    "rows": [
+      {
+        "name": "smooth_01",
+        "baseline": {
+          "bytes": 15972,
+          "paths": 5,
+          "moves": 8,
+          "lines": 0,
+          "cubics": 349
+        },
+        "patched": {
+          "bytes": 16004,
+          "paths": 5,
+          "moves": 8,
+          "lines": 0,
+          "cubics": 349
+        },
+        "byte_delta": 32,
+        "cubic_delta": 0
+      },
+      {
+        "name": "smooth_02",
+        "baseline": {
+          "bytes": 8236,
+          "paths": 2,
+          "moves": 6,
+          "lines": 0,
+          "cubics": 171
+        },
+        "patched": {
+          "bytes": 8238,
+          "paths": 2,
+          "moves": 6,
+          "lines": 0,
+          "cubics": 171
+        },
+        "byte_delta": 2,
+        "cubic_delta": 0
+      },
+      {
+        "name": "smooth_03",
+        "baseline": {
+          "bytes": 14788,
+          "paths": 3,
+          "moves": 7,
+          "lines": 0,
+          "cubics": 316
+        },
+        "patched": {
+          "bytes": 14789,
+          "paths": 3,
+          "moves": 7,
+          "lines": 0,
+          "cubics": 316
+        },
+        "byte_delta": 1,
+        "cubic_delta": 0
+      },
+      {
+        "name": "smooth_04",
+        "baseline": {
+          "bytes": 12639,
+          "paths": 8,
+          "moves": 8,
+          "lines": 0,
+          "cubics": 273
+        },
+        "patched": {
+          "bytes": 12633,
+          "paths": 8,
+          "moves": 8,
+          "lines": 0,
+          "cubics": 273
+        },
+        "byte_delta": -6,
+        "cubic_delta": 0
+      },
+      {
+        "name": "smooth_05",
+        "baseline": {
+          "bytes": 9092,
+          "paths": 1,
+          "moves": 5,
+          "lines": 0,
+          "cubics": 205
+        },
+        "patched": {
+          "bytes": 9135,
+          "paths": 1,
+          "moves": 5,
+          "lines": 0,
+          "cubics": 205
+        },
+        "byte_delta": 43,
+        "cubic_delta": 0
+      },
+      {
+        "name": "smooth_06",
+        "baseline": {
+          "bytes": 9758,
+          "paths": 4,
+          "moves": 8,
+          "lines": 0,
+          "cubics": 206
+        },
+        "patched": {
+          "bytes": 9756,
+          "paths": 4,
+          "moves": 8,
+          "lines": 0,
+          "cubics": 206
+        },
+        "byte_delta": -2,
+        "cubic_delta": 0
+      }
+    ],
+    "avg_baseline_bytes": 11747.5,
+    "avg_patched_bytes": 11759.166666666666,
+    "avg_baseline_cubics": 253.33333333333334,
+    "avg_patched_cubics": 253.33333333333334
+  },
+  "centerline": {
+    "rows": [
+      {
+        "name": "ampersand",
+        "iou": 0.834381413677038,
+        "chamfer_px": 0.2480650521606313,
+        "output": {
+          "bytes": 8646,
+          "paths": 41,
+          "moves": 41,
+          "lines": 36,
+          "cubics": 60
+        },
+        "reference": {
+          "bytes": 15813,
+          "paths": 18,
+          "moves": 18,
+          "lines": 826,
+          "cubics": 0
+        }
+      },
+      {
+        "name": "arrow-pointer",
+        "iou": 0.78945232579767,
+        "chamfer_px": 0.46135048158630554,
+        "output": {
+          "bytes": 7501,
+          "paths": 43,
+          "moves": 43,
+          "lines": 39,
+          "cubics": 25
+        },
+        "reference": {
+          "bytes": 16272,
+          "paths": 31,
+          "moves": 31,
+          "lines": 738,
+          "cubics": 0
+        }
+      },
+      {
+        "name": "arrow-turn-down-left",
+        "iou": 0.9059897288523456,
+        "chamfer_px": 0.6319323241103327,
+        "output": {
+          "bytes": 1934,
+          "paths": 8,
+          "moves": 8,
+          "lines": 5,
+          "cubics": 15
+        },
+        "reference": {
+          "bytes": 6636,
+          "paths": 10,
+          "moves": 10,
+          "lines": 313,
+          "cubics": 0
+        }
+      },
+      {
+        "name": "letter_H",
+        "iou": 0.580445566559394,
+        "chamfer_px": 1.4350342436389503,
+        "output": {
+          "bytes": 1494,
+          "paths": 9,
+          "moves": 9,
+          "lines": 9,
+          "cubics": 0
+        },
+        "reference": {
+          "bytes": 14026,
+          "paths": 11,
+          "moves": 11,
+          "lines": 772,
+          "cubics": 0
+        }
+      },
+      {
+        "name": "letter_K",
+        "iou": 0.5581463373866533,
+        "chamfer_px": 1.4286102692032423,
+        "output": {
+          "bytes": 1714,
+          "paths": 8,
+          "moves": 8,
+          "lines": 4,
+          "cubics": 10
+        },
+        "reference": {
+          "bytes": 10950,
+          "paths": 13,
+          "moves": 13,
+          "lines": 561,
+          "cubics": 0
+        }
+      },
+      {
+        "name": "number_3",
+        "iou": 0.7920200228415911,
+        "chamfer_px": 0.28895734441112586,
+        "output": {
+          "bytes": 3579,
+          "paths": 12,
+          "moves": 12,
+          "lines": 10,
+          "cubics": 41
+        },
+        "reference": {
+          "bytes": 10300,
+          "paths": 5,
+          "moves": 5,
+          "lines": 596,
+          "cubics": 0
+        }
+      },
+      {
+        "name": "number_6",
+        "iou": 0.7038429332430651,
+        "chamfer_px": 0.6236859181384289,
+        "output": {
+          "bytes": 3474,
+          "paths": 9,
+          "moves": 9,
+          "lines": 7,
+          "cubics": 49
+        },
+        "reference": {
+          "bytes": 13091,
+          "paths": 5,
+          "moves": 5,
+          "lines": 770,
+          "cubics": 0
+        }
+      }
+    ],
+    "avg_iou": 0.737754046908251,
+    "avg_chamfer_px": 0.7310908047498597,
+    "avg_output_paths": 18.571428571428573,
+    "avg_reference_paths": 13.285714285714286
+  }
+}

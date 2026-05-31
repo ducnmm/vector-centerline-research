@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Raster-to-Vector Research Review</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin: 32px; color: #171717; }
+    h1 { margin-bottom: 4px; }
+    h2 { margin-top: 36px; }
+    p { max-width: 900px; line-height: 1.5; }
+    table { border-collapse: collapse; width: 100%; margin-top: 16px; }
+    th, td { border-bottom: 1px solid #ddd; padding: 12px; vertical-align: top; text-align: left; }
+    th { background: #f6f6f6; position: sticky; top: 0; }
+    img { max-width: 220px; max-height: 220px; object-fit: contain; background: white; }
+    small { color: #555; }
+    .metric { display: inline-block; margin-right: 18px; padding: 8px 10px; background: #f4f4f4; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <h1>Raster-to-Vector Research Review</h1>
+  <p>Compact visual QA page for the generated SVGs. Metrics are included to make the review reproducible, while final judgment remains visual because these are icon/vectorization tasks.</p>
+
+  <h2>Experiment A: Smooth PNG to SVG</h2>
+  <p>
+    <span class="metric">Avg baseline bytes: 11748</span>
+    <span class="metric">Avg patched bytes: 11759</span>
+    <span class="metric">Avg baseline cubics: 253.3</span>
+    <span class="metric">Avg patched cubics: 253.3</span>
+  </p>
+  <table>
+    <thead><tr><th>Image</th><th>Input</th><th>Baseline VTracer</th><th>Patched VTracer</th></tr></thead>
+    <tbody>
+            <tr>
+              <td><strong>smooth_01</strong><br><small>15972 -> 16004 bytes</small></td>
+              <td><img src="../samples/smooth_png/smooth_01.png" /></td>
+              <td><img src="baseline_renders/smooth_01.svg.png" /></td>
+              <td><img src="patched_renders/smooth_01.svg.png" /></td>
+            </tr>
+            
+            <tr>
+              <td><strong>smooth_02</strong><br><small>8236 -> 8238 bytes</small></td>
+              <td><img src="../samples/smooth_png/smooth_02.png" /></td>
+              <td><img src="baseline_renders/smooth_02.svg.png" /></td>
+              <td><img src="patched_renders/smooth_02.svg.png" /></td>
+            </tr>
+            
+            <tr>
+              <td><strong>smooth_03</strong><br><small>14788 -> 14789 bytes</small></td>
+              <td><img src="../samples/smooth_png/smooth_03.png" /></td>
+              <td><img src="baseline_renders/smooth_03.svg.png" /></td>
+              <td><img src="patched_renders/smooth_03.svg.png" /></td>
+            </tr>
+            
+            <tr>
+              <td><strong>smooth_04</strong><br><small>12639 -> 12633 bytes</small></td>
+              <td><img src="../samples/smooth_png/smooth_04.png" /></td>
+              <td><img src="baseline_renders/smooth_04.svg.png" /></td>
+              <td><img src="patched_renders/smooth_04.svg.png" /></td>
+            </tr>
+            
+            <tr>
+              <td><strong>smooth_05</strong><br><small>9092 -> 9135 bytes</small></td>
+              <td><img src="../samples/smooth_png/smooth_05.png" /></td>
+              <td><img src="baseline_renders/smooth_05.svg.png" /></td>
+              <td><img src="patched_renders/smooth_05.svg.png" /></td>
+            </tr>
+            
+            <tr>
+              <td><strong>smooth_06</strong><br><small>9758 -> 9756 bytes</small></td>
+              <td><img src="../samples/smooth_png/smooth_06.png" /></td>
+              <td><img src="baseline_renders/smooth_06.svg.png" /></td>
+              <td><img src="patched_renders/smooth_06.svg.png" /></td>
+            </tr>
+            </tbody>
+  </table>
+
+  <h2>Experiment B: Centerline Extraction</h2>
+  <p>
+    <span class="metric">Average IoU: 0.738</span>
+    <span class="metric">Average Chamfer: 0.73px</span>
+    <span class="metric">Avg output paths: 18.6</span>
+    <span class="metric">Avg reference paths: 13.3</span>
+  </p>
+  <table>
+    <thead><tr><th>Image</th><th>Input</th><th>Output</th><th>Reference</th></tr></thead>
+    <tbody>
+            <tr>
+              <td><strong>ampersand</strong><br><small>IoU 0.834, Chamfer 0.25px</small></td>
+              <td><img src="../samples/centerline/input/ampersand.png" /></td>
+              <td><img src="centerline_renders/ampersand.svg.png" /></td>
+              <td><img src="centerline_reference_renders/ampersand.svg.png" /></td>
+            </tr>
+            
+            <tr>
+              <td><strong>arrow-pointer</strong><br><small>IoU 0.789, Chamfer 0.46px</small></td>
+              <td><img src="../samples/centerline/input/arrow-pointer.png" /></td>
+              <td><img src="centerline_renders/arrow-pointer.svg.png" /></td>
+              <td><img src="centerline_reference_renders/arrow-pointer.svg.png" /></td>
+            </tr>
+            
+            <tr>
+              <td><strong>arrow-turn-down-left</strong><br><small>IoU 0.906, Chamfer 0.63px</small></td>
+              <td><img src="../samples/centerline/input/arrow-turn-down-left.png" /></td>
+              <td><img src="centerline_renders/arrow-turn-down-left.svg.png" /></td>
+              <td><img src="centerline_reference_renders/arrow-turn-down-left.svg.png" /></td>
+            </tr>
+            
+            <tr>
+              <td><strong>letter_H</strong><br><small>IoU 0.580, Chamfer 1.44px</small></td>
+              <td><img src="../samples/centerline/input/letter_H.png" /></td>
+              <td><img src="centerline_renders/letter_H.svg.png" /></td>
+              <td><img src="centerline_reference_renders/letter_H.svg.png" /></td>
+            </tr>
+            
+            <tr>
+              <td><strong>letter_K</strong><br><small>IoU 0.558, Chamfer 1.43px</small></td>
+              <td><img src="../samples/centerline/input/letter_K.png" /></td>
+              <td><img src="centerline_renders/letter_K.svg.png" /></td>
+              <td><img src="centerline_reference_renders/letter_K.svg.png" /></td>
+            </tr>
+            
+            <tr>
+              <td><strong>number_3</strong><br><small>IoU 0.792, Chamfer 0.29px</small></td>
+              <td><img src="../samples/centerline/input/number_3.png" /></td>
+              <td><img src="centerline_renders/number_3.svg.png" /></td>
+              <td><img src="centerline_reference_renders/number_3.svg.png" /></td>
+            </tr>
+            
+            <tr>
+              <td><strong>number_6</strong><br><small>IoU 0.704, Chamfer 0.62px</small></td>
+              <td><img src="../samples/centerline/input/number_6.png" /></td>
+              <td><img src="centerline_renders/number_6.svg.png" /></td>
+              <td><img src="centerline_reference_renders/number_6.svg.png" /></td>
+            </tr>
+            </tbody>
+  </table>
+</body>
+</html>

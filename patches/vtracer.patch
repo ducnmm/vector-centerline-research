@@ -1,0 +1,14 @@
+diff --git a/Cargo.toml b/Cargo.toml
+index 999f733..fc6d490 100644
+--- a/Cargo.toml
++++ b/Cargo.toml
+@@ -4,4 +4,7 @@ members = [
+     "cmdapp",
+     "webapp",
+ ]
+-resolver = "2"
+\ No newline at end of file
++resolver = "2"
++
++[patch.crates-io]
++visioncortex = { path = "../visioncortex" }
