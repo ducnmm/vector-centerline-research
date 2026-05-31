@@ -16,9 +16,17 @@ This repository contains two image-processing experiments around raster-to-vecto
 
 ## Results
 
-Experiment A produced patched VTracer SVGs for all 6 line-art PNG samples:
+Experiment A produced patched VTracer SVGs for all 6 line-art PNG samples. The samples are already clean, high-contrast icons, so the rendered SVGs intentionally look very close to the inputs at thumbnail size.
+
+Input PNGs:
+
+![Experiment A inputs](analysis/smooth_png_contact.jpg)
+
+Rendered patched SVG outputs:
 
 ![Experiment A outputs](analysis/smooth_patched_contact.jpg)
+
+This experiment is not presented as a dramatic visual jump over the baseline; VTracer is already strong on simple line-art. The contribution here is the core-library patch and the conservative smoothing/handle behavior. Full input/baseline/patched comparison is in `analysis/report.html`.
 
 Experiment B produced centerline SVGs for all 7 filled-stroke samples. The output is a stroked centerline representation, not an outline trace:
 
